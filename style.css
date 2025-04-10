@@ -1,3 +1,53 @@
+# Adding the new content for the style and html to the existing structure
+files_fixed = {
+    "index.html": """
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الكولونيل AI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background"></div>
+    <div class="container">
+        <div class="logo-box">Colonel AI</div>
+        <h1>مرحباً أيها الجندي، ما هو سؤالك؟</h1>
+        <input type="text" id="userInput" placeholder="اكتب سؤالك هنا...">
+        <button onclick="getResponse()">إرسال</button>
+        <p id="response"></p>
+    </div>
+    <audio autoplay loop>
+        <source src="horror.mp3" type="audio/mpeg">
+        متصفحك لا يدعم تشغيل الصوت.
+    </audio>
+    <script>
+        function getResponse() {
+            var input = document.getElementById("userInput").value.trim();
+            var response = "";
+
+            if (input === "من هو العدو؟") {
+                response = "العدو هو كل من يحاول تهديد أمن الوطن.";
+            } else if (input === "ما هي الخطة؟") {
+                response = "الخطة تعتمد على السرية والمباغتة.";
+            } else if (input === "أين موقع العدو؟") {
+                response = "الموقع سري للغاية.";
+            } else if (input === "من هو القائد؟") {
+                response = "القائد الأعلى هو الكولونيل نايف.";
+            } else if (input === "ما هي الرتبة التالية؟") {
+                response = "الترقية تعتمد على الجدارة والانضباط.";
+            } else if (input === "علي بن زيد جاسوس؟") {
+                response = "نعم، ومن أكبر المتخلفين في العالم.";
+            } else {
+                response = "السؤال غير مفهوم، حاول مرة أخرى أيها الجندي.";
+            }
+
+            document.getElementById("response").innerText = response;
+        }
+    </script>
+</body>
+</html>
 """,
     "style.css": """
 body {
@@ -53,6 +103,19 @@ button:hover {
     margin-top: 20px;
     font-size: 20px;
 }
+
+.logo-box {
+    display: inline-block;
+    background-color: #222;
+    border: 2px solid #4caf50;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #4caf50;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px #4caf50;
+}
 """
 }
 
@@ -64,3 +127,5 @@ with ZipFile(fixed_zip_path, 'w') as zipf:
         with open(file_path, "w", encoding="utf-8") as f:
             f.write(content)
         zipf.write(file_path, arcname=filename)
+
+fixed_zip_path
