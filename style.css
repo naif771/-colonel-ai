@@ -1,4 +1,4 @@
-# Adding the new content for the style and html to the existing structure
+# Adding the requested change for the logo in the top left of the page
 files_fixed = {
     "index.html": """
 <!DOCTYPE html>
@@ -12,7 +12,7 @@ files_fixed = {
 <body>
     <div class="background"></div>
     <div class="container">
-        <div class="logo-box">Colonel AI</div>
+        <div class="logo-left">الكولونيل AI</div>
         <h1>مرحباً أيها الجندي، ما هو سؤالك؟</h1>
         <input type="text" id="userInput" placeholder="اكتب سؤالك هنا...">
         <button onclick="getResponse()">إرسال</button>
@@ -104,16 +104,16 @@ button:hover {
     font-size: 20px;
 }
 
-.logo-box {
-    display: inline-block;
-    background-color: #222;
-    border: 2px solid #4caf50;
-    padding: 10px 20px;
-    border-radius: 10px;
-    font-size: 24px;
+.logo-left {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 28px;
     font-weight: bold;
     color: #4caf50;
-    margin-bottom: 20px;
+    background-color: #222;
+    padding: 10px 20px;
+    border-radius: 10px;
     box-shadow: 0 0 10px #4caf50;
 }
 """
