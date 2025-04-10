@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colonel AI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <audio autoplay loop>
+        <source src="horror.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <div class="container">
+        <h1>Colonel AI</h1>
+        <p>How can I assist you, soldier?</p>
+        <input type="text" id="userInput" placeholder="Type your question...">
+        <button onclick="getResponse()">Ask</button>
+        <div id="response"></div>
+    </div>
+
+    <script>
+        function getResponse() {
+            const input = document.getElementById('userInput').value.toLowerCase();
+            let response = '';
+
+            if (input.includes('how to ambush') || input.includes('ambush')) {
+                response = 'To ambush effectively, you need to scout the location, set traps, and maintain radio silence.';
+            } else if (input.includes('defense strategy')) {
+                response = 'A solid defense strategy includes perimeter security, surveillance, and fallback points.';
+            } else if (input.includes('what is colonel ai')) {
+                response = 'Colonel AI is your strategic military assistant, trained to help in planning and response.';
+            } else if (input.includes('emergency protocol')) {
+                response = 'Initiate Code Red. Secure all units and await further instructions.';
+            } else {
+                response = 'Unknown command. Please rephrase or try another query.';
+            }
+
+            document.getElementById('response').innerText = response;
+        }
+    </script>
+</body>
+</html>
