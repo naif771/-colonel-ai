@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الكولونيل AI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background"></div>
+    <div class="container">
+        <h1>كيف أقدر أخدمك يا جندي؟</h1>
+        <input type="text" id="userInput" placeholder="اكتب سؤالك العسكري...">
+        <button onclick="getResponse()">إرسال</button>
+        <p id="response"></p>
+    </div>
+    <audio autoplay loop>
+        <source src="horror.mp3" type="audio/mpeg">
+        متصفحك لا يدعم تشغيل الصوت.
+    </audio>
+    <script>
+        function getResponse() {
+            var input = document.getElementById("userInput").value.trim();
+            var response = "";
+
+            if (input === "من هو العدو؟") {
+                response = "العدو هو كل من يحاول المساس بأمن وطننا.";
+            } else if (input === "ما هي الخطة؟") {
+                response = "الخطة تعتمد على تكتيك المباغتة والهجوم الذكي.";
+            } else if (input === "أين موقع العدو؟") {
+                response = "الموقع سري ويُكشف فقط عند الحاجة.";
+            } else if (input === "من هو القائد؟") {
+                response = "القائد هو الكولونيل نايف، حفظه الله.";
+            } else if (input === "ما هي الرتبة التالية؟") {
+                response = "الرتبة التالية تعتمد على الأداء والانضباط.";
+            } else if (input === "علي بن زيد جاسوس؟") {
+                response = "نعم، ومن أكبر المتخلفين في العالم.";
+            } else {
+                response = "سؤالك غير مفهوم، حاول مرة أخرى أيها الجندي.";
+            }
+
+            document.getElementById("response").innerText = response;
+        }
+    </script>
+</body>
+</html>
