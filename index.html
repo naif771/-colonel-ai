@@ -1,4 +1,4 @@
-
+"index.html": """
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -10,8 +10,8 @@
 <body>
     <div class="background"></div>
     <div class="container">
-        <h1>كيف أقدر أخدمك يا جندي؟</h1>
-        <input type="text" id="userInput" placeholder="اكتب سؤالك العسكري...">
+        <h1>مرحباً أيها الجندي، ما هو سؤالك؟</h1>
+        <input type="text" id="userInput" placeholder="اكتب سؤالك هنا...">
         <button onclick="getResponse()">إرسال</button>
         <p id="response"></p>
     </div>
@@ -25,19 +25,19 @@
             var response = "";
 
             if (input === "من هو العدو؟") {
-                response = "العدو هو كل من يحاول المساس بأمن وطننا.";
+                response = "العدو هو كل من يحاول تهديد أمن الوطن.";
             } else if (input === "ما هي الخطة؟") {
-                response = "الخطة تعتمد على تكتيك المباغتة والهجوم الذكي.";
+                response = "الخطة تعتمد على السرية والمباغتة.";
             } else if (input === "أين موقع العدو؟") {
-                response = "الموقع سري ويُكشف فقط عند الحاجة.";
+                response = "الموقع سري للغاية.";
             } else if (input === "من هو القائد؟") {
-                response = "القائد هو الكولونيل نايف، حفظه الله.";
+                response = "القائد الأعلى هو الكولونيل نايف.";
             } else if (input === "ما هي الرتبة التالية؟") {
-                response = "الرتبة التالية تعتمد على الأداء والانضباط.";
+                response = "الترقية تعتمد على الجدارة والانضباط.";
             } else if (input === "علي بن زيد جاسوس؟") {
                 response = "نعم، ومن أكبر المتخلفين في العالم.";
             } else {
-                response = "سؤالك غير مفهوم، حاول مرة أخرى أيها الجندي.";
+                response = "السؤال غير مفهوم، حاول مرة أخرى أيها الجندي.";
             }
 
             document.getElementById("response").innerText = response;
