@@ -1,9 +1,4 @@
-document.getElementById("response").innerText = response;
-        }
-    </script>
-</body>
-</html>
-""",
+
     "style.css": """
 body {
     margin: 0;
